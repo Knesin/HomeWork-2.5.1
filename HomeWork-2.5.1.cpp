@@ -7,19 +7,20 @@ public:
     std::string get_name() { return name_; }
     Figure() : Figure(0, "Фигура") {};
 protected:
-    Figure(int s_c, std::string n) { sides_count_ = s_c; name_ = n; }
+    Figure(const int& s_c, const std::string& n) : sides_count_(s_c), name_(n) {};
 private:
     int sides_count_;
     std::string name_;
 };
+
 class Triangle : public Figure {
 public:
-    Triangle() : Figure (3, "Треугольник") {};
+    Triangle() : Figure(3, "Треугольник") {};
 };
 
 class Quadrangle : public Figure {
 public:
-    Quadrangle() : Figure (4, "Четырёхугольник") {};
+    Quadrangle() : Figure(4, "Четырёхугольник") {};
 };
 
 int main()
